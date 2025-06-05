@@ -5,7 +5,7 @@ import MannagerPage from './Components/Mannager/Mannager';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/gimnasio">
       <Routes>
         <Route path="/" element={<LoginForm />} />
         <Route path="/user" element={<UserPage />} />
