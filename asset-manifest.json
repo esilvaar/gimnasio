@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/gimnasio/static/css/main.d56dc793.css",
+    "main.js": "/gimnasio/static/js/main.6e569dde.js",
+    "static/js/453.9c4b05d1.chunk.js": "/gimnasio/static/js/453.9c4b05d1.chunk.js",
+    "static/media/Login.jpg": "/gimnasio/static/media/Login.98c778cc73bb3a9b7b89.jpg",
+    "index.html": "/gimnasio/index.html",
+    "main.d56dc793.css.map": "/gimnasio/static/css/main.d56dc793.css.map",
+    "main.6e569dde.js.map": "/gimnasio/static/js/main.6e569dde.js.map",
+    "453.9c4b05d1.chunk.js.map": "/gimnasio/static/js/453.9c4b05d1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d56dc793.css",
+    "static/js/main.6e569dde.js"
+  ]
+}
