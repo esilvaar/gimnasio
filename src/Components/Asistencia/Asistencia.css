@@ -1,0 +1,172 @@
+/* Asistencia.css */
+
+.asistencia-container {
+    max-width: 1000px;
+    margin: 80px auto 40px;
+    padding: 24px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+.asistencia-container h2 {
+    color: #333;
+    margin-bottom: 24px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.registro-asistencia {
+    text-align: center;
+    margin-bottom: 32px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.btn-registrar {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-registrar:hover {
+    background: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+}
+
+.filtros {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    align-items: center;
+}
+
+.filtros input {
+    padding: 10px 12px;
+    border: 2px solid #e1e5e9;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.filtros input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.filtros button {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.filtros button:hover {
+    background: #545b62;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.asistencias-lista {
+    overflow-x: auto;
+}
+
+.tabla-asistencias {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+}
+
+.tabla-asistencias th {
+    background: #f8f9fa;
+    color: #495057;
+    font-weight: 600;
+    padding: 16px 12px;
+    text-align: left;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.tabla-asistencias td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle;
+}
+
+.tabla-asistencias tr:hover {
+    background: #f8f9fa;
+}
+
+.estado {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.estado.presente {
+    background: #d4edda;
+    color: #155724;
+}
+
+.estado.ausente {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.btn-eliminar {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-eliminar:hover {
+    background: #c82333;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .asistencia-container {
+        margin: 70px 10px 20px;
+        padding: 16px;
+    }
+    
+    .filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .tabla-asistencias {
+        font-size: 0.9rem;
+    }
+    
+    .tabla-asistencias th,
+    .tabla-asistencias td {
+        padding: 10px 8px;
+    }
+}
