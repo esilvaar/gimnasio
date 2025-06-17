@@ -1,0 +1,93 @@
+/* Calendario.css */
+
+/* Contenedor principal centrado */
+.calendario-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 24px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+/* Encabezado del calendario */
+.calendario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.calendario-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Navegación de meses */
+.calendario-nav button {
+    background: #f0f0f0;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.calendario-nav button:hover {
+    background: #e0e0e0;
+}
+
+/* Tabla del calendario */
+.calendario-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.calendario-table th,
+.calendario-table td {
+    width: 14.28%;
+    padding: 12px 0;
+    border: 1px solid #eaeaea;
+    font-size: 1rem;
+}
+
+.calendario-table th {
+    background: #f7f7f7;
+    color: #666;
+    font-weight: 600;
+}
+
+.calendario-table td {
+    background: #fafafa;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.calendario-table td:hover {
+    background: #e3f2fd;
+}
+
+/* Día seleccionado */
+.calendario-table .selected {
+    background: #1976d2;
+    color: #fff;
+    border-radius: 50%;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .calendario-container {
+        padding: 8px;
+        max-width: 100%;
+    }
+    .calendario-title {
+        font-size: 1.2rem;
+    }
+    .calendario-table th,
+    .calendario-table td {
+        padding: 6px 0;
+        font-size: 0.85rem;
+    }
+}
