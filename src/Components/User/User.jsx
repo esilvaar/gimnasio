@@ -1,18 +1,33 @@
-import React, { useState } from 'react'
-import Navbar from '../Navbar/Navbar'
-import Calendario from '../Calendario/Calendario'
+import React, { useState } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
+import Calendario from "../Calendario/Calendario";
+import Reservas from "../Reservas/Reservas";
+import Rutinas from "../Rutinas/Rutinas";
 
 function User() {
-  const [view, setView] = useState('calendario')
+  const currentUser = JSON.parse(localStorage.getItem("currentUser")) || {
+    id: 1,
+    name: "Invitado",
+    type: "user",
+  };
 
-  // Suponiendo que Navbar acepta una prop onNavClick
   return (
-    <div>
-      <Navbar role="user" onNavClick={setView} />
-      {view === 'calendario' && <Calendario />}
-      {/* Puedes agregar más vistas aquí según sea necesario */}
-    </div>
-  )
+    <>
+      <Navbar role="user" />
+      <Routes>
+        <Route path="/calendario" element={<Calendario />} />
+        <Route
+          path="/reservas"
+          element={<Reservas userType="user" currentUser={currentUser} />}
+        />
+        <Route
+          path="/rutinas"
+          element={<Rutinas userType="user" currentUser={currentUser} />}
+        />
+        <Route path="*" element={<Navigate to="/calendario" />} />
+      </Routes>
+    </>
+  );
 }
-
-export default User
+export default User;

@@ -1,4 +1,4 @@
-import './LoginForm.css';
+import "./LoginForm.css";
 import { FaUser, FaLock } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -10,23 +10,19 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const res = await fetch("https://6840f643d48516d1d359d997.mockapi.io/user");
+      const res = await fetch(
+        "https://6840f643d48516d1d359d997.mockapi.io/user"
+      );
       const users = await res.json();
-
       const user = users.find(
         (u) => u.name === username && u.password === password
       );
-
       if (user) {
-        if (user.type === "user") {
-          navigate("/user");
-        } else if (user.type === "mannager") {
-          navigate("/mannager");
-        } else {
-          alert("Tipo de usuario desconocido.");
-        }
+        localStorage.setItem("currentUser", JSON.stringify(user));
+        if (user.type === "user") navigate("/user/calendario");
+        else if (user.type === "mannager") navigate("/mannager/calendario");
+        else alert("Tipo de usuario desconocido.");
       } else {
         alert("Usuario o contraseña incorrectos.");
       }
@@ -37,7 +33,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className='wrapper'>
+    <div className="wrapper">
       <form onSubmit={handleSubmit}>
         <h1>INICIO SESION GIMNASIO</h1>
         <div className="input-box">
@@ -60,13 +56,9 @@ const LoginForm = () => {
           />
           <FaLock className="icon" />
         </div>
-        <div className="remember-forgot">
-          <a href="#">¿Olvidaste tu contraseña?</a>
-        </div>
         <button type="submit">Iniciar Sesión</button>
       </form>
     </div>
   );
 };
-
 export default LoginForm;
